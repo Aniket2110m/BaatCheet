@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Login | BaatCheet</title>
+  <style>
+    body {
+      background: #f0f2f5;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+      margin: 0;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    }
+    .login-container {
+      background: #fff;
+      padding: 2rem 2.5rem;
+      border-radius: 10px;
+      box-shadow: 0 2px 16px rgba(0,0,0,0.08);
+      min-width: 320px;
+      max-width: 90vw;
+    }
+    .login-container h2 {
+      margin-bottom: 1.5rem;
+      color: #333;
+      text-align: center;
+    }
+    .form-group {
+      margin-bottom: 1.2rem;
+    }
+    label {
+      display: block;
+      margin-bottom: 0.5rem;
+      color: #555;
+    }
+    input[type="text"] {
+      width: 100%;
+      padding: 0.7rem;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+      font-size: 1rem;
+    }
+    .remember {
+      display: flex;
+      align-items: center;
+      margin-bottom: 1.2rem;
+    }
+    .remember input {
+      margin-right: 0.5rem;
+    }
+    .error-message {
+      color: #d8000c;
+      background: #ffd2d2;
+      padding: 0.5rem 1rem;
+      border-radius: 5px;
+      margin-bottom: 1rem;
+      text-align: center;
+      font-size: 0.95rem;
+    }
+    button {
+      width: 100%;
+      padding: 0.8rem;
+      background: #007bff;
+      color: #fff;
+      border: none;
+      border-radius: 5px;
+      font-size: 1.1rem;
+      cursor: pointer;
+      transition: background 0.2s;
+    }
+    button:hover {
+      background: #0056b3;
+    }
+  </style>
+</head>
+<body>
+  <div class="login-container">
+    <h2>Welcome to the Chat Room</h2>
+    {% if error %}
+      <div class="error-message">{{ error }}</div>
+    {% endif %}
+    <form method="post" autocomplete="off">
+      <div class="form-group">
+        <label for="username">Username</label>
+        <input type="text" id="username" name="username" placeholder="Enter your username" required autofocus />
+      </div>
+      <div class="remember">
+        <input type="checkbox" id="remember" name="remember">
+        <label for="remember">Remember me</label>
+      </div>
+      <button type="submit">Join Chat</button>
+    </form>
+  </div>
+</body>
+</html>

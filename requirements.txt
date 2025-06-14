@@ -1,0 +1,6 @@
+Flask==2.3.3
+flask
+flask-socketio
+flask-login
+flask-sqlalchemy
+eventlet
